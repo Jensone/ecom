@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ product.name }}
+{% endblock %}
+
+{% block body %}
+
+	<h1 class="text-3xl font-semibold text-center text-slate-800 mb-5">
+		{{ product.name }}
+	</h1>
+
+	<div class="flex gap-4">
+		<div class="w-1/2">
+			<img class="w-full rounded-xl"
+            src="{{ product.image }}" alt="{{ product.name }}">
+		</div>
+		<div class="w-1/2">
+			<p class="italic mb-3">Résumé : {{ product.description|slice(0, 100) }}...</p>
+			<p class="text-4xl font-bold mb-3">{{ product.price }} &euro;</p>
+			<p class="mb-3">Ce produit est dans categorie 
+                <a class="text-indigo-700" href="#">{{ product.category.name }}</a>.
+            </p>
+            <div class="flex flex-wrap gap-2">
+                {% for item in product.category.products %}
+                    <img class="w-10 h-10 rounded-md" src="{{ item.image }}" alt="{{ item.name }}">
+                {% endfor %}
+            </div>
+		</div>
+	</div>
+
+	<a href={{ path('app_homepage') }} class="block p-2 w-full text-indigo-700 text-center">
+		Retour
+	</a>
+
+{% endblock %}

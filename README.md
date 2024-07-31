@@ -92,3 +92,29 @@ symfony server:start
 ```
 
 Vous pouvez ajouter le drapeau `-d` pour masquer les logs dans le terminal. ATTENTION, pensez à arrêter le serveur lorsque vous avez terminé de travailler sur votre projet en local.
+
+---
+
+## EasyAdmin
+
+EasyAdmin est un outil de gestion de type administration pour Symfony.
+
+Installer le package nécessaire :
+
+```bash
+composer require easycorp/easyadmin-bundle
+```
+
+Créer le tableau de bord (Dashboard) :
+
+```bash
+symfony console make:admin:dashboard
+```
+
+Configurer le CRUD pour les entités souhaitées :
+
+```bash
+symfony console make:admin:crud
+```
+
+Reste plus qu'à configurer la route et le menu du tableau de bord dans le fichier `src/Controller/Admin/DashboardController.php`.

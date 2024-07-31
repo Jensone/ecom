@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block body %}
+
+{% for item in products %}
+    <h4 class="p-2 mb-3 hover:bg-slate-200 hover:text-slate-900 rounded-md">
+        <a href={{ path('app_product', {ref: item.ref}) }}>
+            {{ item.name }} - {{ item.price }} &euro;
+        </a>
+    </h4>
+{% endfor %}
+
+{% endblock %}
