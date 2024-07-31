@@ -61,9 +61,25 @@ Raccourci : `symfony console d:m:m`
 
 ---
 
-Créer les données de démonstration :
+Créer les données de démonstration (fake data) :
+
+Installer les packages nécessaires :
+
+```bash
+composer req orm-fixtures --dev
+composer req fakerphp/faker --dev
+```
+
+`orm-fixtures` : package remplir une base de données de manière automatique.
+`fakerphp/faker` : package pour générer des fausses données mais cohérentes pour les tests.
+
+Exécuter la commandes pour créer les données de démonstration :
 
 ```bash
 symfony console doctrine:fixtures:load
 ```
+
+Raccourci : `symfony console d:f:l`
+
+---
 
