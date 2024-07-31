@@ -4,6 +4,8 @@ Récapitulatif des commandes pour installer et configurer Symfony puis implémen
 
 ---
 
+## Mise en place
+
 Créer un projet Symfony :
 
 ```bash
@@ -71,7 +73,7 @@ composer req fakerphp/faker --dev
 ```
 
 `orm-fixtures` : package remplir une base de données de manière automatique.
-`fakerphp/faker` : package pour générer des fausses données mais cohérentes pour les tests.
+`fakerphp/faker` : package pour générer des fausses données mais cohérentes pour les tests. Lien : [Documentation Faker](https://fakerphp.org/)
 
 Exécuter la commandes pour créer les données de démonstration :
 
@@ -83,3 +85,10 @@ Raccourci : `symfony console d:f:l`
 
 ---
 
+## Lancer le serveur
+
+```bash
+symfony server:start
+```
+
+Vous pouvez ajouter le drapeau `-d` pour masquer les logs dans le terminal. ATTENTION, pensez à arrêter le serveur lorsque vous avez terminé de travailler sur votre projet en local.
