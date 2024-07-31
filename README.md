@@ -25,6 +25,24 @@ Supprimer la BDD :
 symfony console doctrine:database:drop --force
 ```
 
+Il est d'utiliser des accronyme pour certaines commandes comme les suivantes :
+
+```bash
+symfony console d:d:c 
+# ou
+symfony console d:d:d --force 
+```
+
+---
+
+Créer une entité :
+
+```bash
+symfony console make:entity
+```
+
+Les entités sont le nom des classes de votre diagramme de classe. Il servent à représenter le schéma de votre base de données. Dans le cadre de Symfony, il permettent à Doctrine de faire le lien entre votre modèle et votre base de données.
+
 ---
 
 Créer une migration :
@@ -32,12 +50,18 @@ Créer une migration :
 symfony console make:migration
 ```
 
+Notez qu'il faut à chaque modification d'une entité (des propriétés, et des relations) créer une nouvelle migration.
+
 Exécuter la migration :
 ```bash
 symfony console doctrine:migrations:migrate
 ```
 
-Importer les données de démo :
+Raccourci : `symfony console d:m:m`
+
+---
+
+Créer les données de démonstration :
 
 ```bash
 symfony console doctrine:fixtures:load
