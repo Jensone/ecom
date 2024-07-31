@@ -7,7 +7,6 @@ use Faker\Factory;
 use App\Entity\Product;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Faker\Core\Uuid;
 
 class AppFixtures extends Fixture
 {

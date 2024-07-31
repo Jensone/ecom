@@ -1,6 +1,21 @@
-# Récap
+# Récap des commandes
+
+Récapitulatif des commandes pour installer et configurer Symfony puis implémenter une base de données et des migrations.
+
+---
+
+Créer un projet Symfony :
+
+```bash
+symfony new ecom --webapp
+```
+
+La commande `symfony`provient de l'interface de ligne de commande appelée `Symfony CLI`. Lien : [Documentation Symfony](https://symfony.com/download)
+
+---
 
 Créer une BDD :
+
 ```bash
 symfony console doctrine:database:create
 ```
@@ -9,6 +24,8 @@ Supprimer la BDD :
 ```bash
 symfony console doctrine:database:drop --force
 ```
+
+---
 
 Créer une migration :
 ```bash
