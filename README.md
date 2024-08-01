@@ -117,4 +117,4 @@ Configurer le CRUD pour les entités souhaitées :
 symfony console make:admin:crud
 ```
 
-Reste plus qu'à configurer la route et le menu du tableau de bord dans le fichier `src/Controller/Admin/DashboardController.php`.
+Reste plus qu'à configurer la route et le menu du tableau de bord dans le fichier `src/Controller/Admin/DashocoboardController.php`.
