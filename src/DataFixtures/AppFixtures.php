@@ -2,9 +2,10 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Category;
 use Faker\Factory;
+use App\Entity\User;
 use App\Entity\Product;
+use App\Entity\Category;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 
@@ -13,6 +14,15 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $faker = Factory::create('fr_FR');
+
+        // ----- Admin -----
+        $admin = new User();
+        $admin
+            ->setEmail('admin@admin.fr')
+            ->setPassword('$2y$13$ipUSLg.MKR9hdbV7lnvocOlBRvqawSIqspDQo8JIDQyw1H9i6veQi')
+            ->setRoles(['ROLE_ADMIN'])
+        ;
+        $manager->persist($admin);
         
         // ----- Liste des catégories -----
         $categoryList = [
