@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
 
 class ProductController extends AbstractController
@@ -13,14 +13,13 @@ class ProductController extends AbstractController
     public function show(
         ProductRepository $productRepository,
         string $ref // Paramètre de l'URL
-    ): Response
+    ): JsonResponse
     {
         $product = $productRepository->findOneBy([ // Trouve un produit
             'ref' => $ref // Valeur du filtre
         ]);
-        return $this->render('product/show.html.twig', [
-            'product' => $product, // Variable à passer à la vue (template)
-            'toto' => ['tata', 'riri', 'fifi'],
+        return $this->json([
+            'product' => ['toto' => 'tata', 'riri' => 'fifi'],
         ]);
     }
 }
