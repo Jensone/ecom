@@ -33,6 +33,7 @@ class Category
     public function __construct()
     {
         $this->products = new ArrayCollection();
+        $this->ref = uniqid('CAT_');
     }
 
     public function getId(): ?int
@@ -104,5 +105,10 @@ class Category
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }

@@ -45,6 +45,11 @@ class Product
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
 
+    public function __construct()
+    {
+        $this->ref = uniqid('ITEM_');
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,5 +125,11 @@ class Product
         $this->category = $category;
 
         return $this;
+    }
+
+    // Retourne lorsque nécessaire une chaîne de caractères pour l'identifier dans la vue
+    public function __toString()
+    {
+        return $this->name;
     }
 }
